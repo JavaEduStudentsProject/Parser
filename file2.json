@@ -1,0 +1,14 @@
+{
+  "name": "Иван",
+  "price": 37,
+  "category": [
+  {
+    "catOne": "1",
+    "catTwo": "2"
+  },
+    {
+      "catOne": "3",
+      "catTwo": "4"
+    }
+    ]
+}

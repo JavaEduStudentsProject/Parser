@@ -1,20 +1,25 @@
 package model;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 public class Product {
 
     private String name;
 
     private int price;
 
-    private String category;
+    @SerializedName("category")
+    private List<Category> categories;
 
     public Product() {
     }
 
-    public Product(String name, int price, String category) {
+    public Product(String name, int price, List<Category> categories) {
         this.name = name;
         this.price = price;
-        this.category = category;
+        this.categories = categories;
     }
 
     public String getName() {
@@ -33,12 +38,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getCategory() {
-        return category;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     @Override
@@ -46,7 +51,7 @@ public class Product {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", category='" + category + '\'' +
+                ", categories='" + categories + '\'' +
                 '}';
     }
 }
