@@ -4,14 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="Class Parser">
+    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="Class ParserSCV, ParserJson">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/converter/CsvToJson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ServiceDemoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ServiceDemoProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_opencsv_opencsv_5_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_qualitycheck_quality_check_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_uadetector_uadetector_core_0_9_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_uadetector_uadetector_json_0_1_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20220320.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_2_9_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/ParseProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/ParseProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/converter/Converter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/People.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/file.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/file2.json" beforeDir="false" afterPath="$PROJECT_DIR$/file2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Root.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/GsonParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/JsonSimpleParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/ParserCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/ParserCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/ParserJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/ParserJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +75,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/elizavetakabak/repos/ServiceDemoProject&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3dba29f45b369002f9834d08d50074c5&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ParseProjectApplication">
+    <configuration name="CsvToJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="converter.CsvToJson" />
+      <module name="ServiceDemoProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="converter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.parseproject.Example" />
+      <module name="ServiceDemoProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.parseproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadCSVAsListOfMaps" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.ReadCSVAsListOfMaps" />
+      <module name="ServiceDemoProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ParseProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ServiceDemoProject" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.parseproject.ParseProjectApplication" />
@@ -71,6 +147,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CsvToJson" />
+        <item itemvalue="Application.Example" />
+        <item itemvalue="Application.ReadCSVAsListOfMaps" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,6 +173,19 @@
       <workItem from="1660144104810" duration="215000" />
       <workItem from="1660144349874" duration="43000" />
       <workItem from="1660144561056" duration="4767000" />
+      <workItem from="1660386256003" duration="2959000" />
+      <workItem from="1660586721833" duration="111000" />
+      <workItem from="1660640453419" duration="3777000" />
+      <workItem from="1660645656449" duration="4728000" />
+      <workItem from="1660653439783" duration="9000" />
+      <workItem from="1660654458706" duration="482000" />
+      <workItem from="1660655943579" duration="13920000" />
+      <workItem from="1660834600445" duration="67000" />
+      <workItem from="1660834687229" duration="261000" />
+      <workItem from="1660834984545" duration="15057000" />
+      <workItem from="1661178140566" duration="44000" />
+      <workItem from="1661178203176" duration="742000" />
+      <workItem from="1661179021736" duration="4076000" />
     </task>
     <task id="LOCAL-00001" summary="Class Parser">
       <created>1659561281260</created>
@@ -112,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659606300153</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Class ParserSCV, ParserJson">
+      <created>1660153334246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660153334246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +235,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Class Parser" />
     <MESSAGE value="Class Parser/Converter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class Parser/Converter" />
+    <MESSAGE value="Class ParserSCV, ParserJson" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class ParserSCV, ParserJson" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

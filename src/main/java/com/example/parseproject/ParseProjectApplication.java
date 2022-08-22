@@ -1,27 +1,20 @@
 package com.example.parseproject;
 
-import model.Root;
+import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import parser.GsonParser;
-import parser.JsonSimpleParser;
 import parser.ParserFactory;
+
+import java.io.IOException;
 
 @SpringBootApplication
 public class ParseProjectApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, CsvValidationException {
         SpringApplication.run(ParseProjectApplication.class, args);
-        JsonSimpleParser parser = new JsonSimpleParser();
-        Root root = parser.parse();
-        System.out.println("(Simple)    Root "+root.toString());// раскомментировать при запуске симпл
-
-        GsonParser gsonParser = new GsonParser();
-        Root newRoot = gsonParser.parse();
-        System.out.println("(Gson)    Root "+newRoot.toString());
 
         ParserFactory parserFactory = new ParserFactory();
-        System.out.println(parserFactory.getParserByFileName("file2.json").execute());
-    }
+        System.out.println(parserFactory.getParserByFileName("file3.csv").execute());
 
+    }
 }

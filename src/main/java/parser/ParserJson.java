@@ -1,23 +1,11 @@
 package parser;
 
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import converter.Converter;
-import model.Product;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-import org.yaml.snakeyaml.parser.ParserException;
-
-import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ParserJson extends Parser {
-    public static final String JSON_IS_INVALID = "формат не соответсвует формату json";
 
     private ObjectMapper jsonMapper;
 
@@ -26,18 +14,18 @@ public class ParserJson extends Parser {
     }
 
     @Override
-    protected List<String[]> parse(BufferedReader input) {
+    protected List<String> parse(FileReader input) {
         System.out.println("json, проверка фабрики");
-
-        String data = input.lines().collect(Collectors.joining());
-
-        System.out.println(data);
-
-        Gson g = new Gson();
-        Product product = g.fromJson(data, Product.class);
-
-        System.out.println(product.getName());
-        System.out.println(product.getPrice());
+//
+//        String data = input.lines().collect(Collectors.joining());
+//
+//        System.out.println(data);
+//
+//        Gson g = new Gson();
+//        Product product = g.fromJson(data, Product.class);
+//
+//        System.out.println(product.getName());
+//        System.out.println(product.getPrice());
 
 
 //        Object json;

@@ -1,25 +1,29 @@
 package model;
 
 import com.google.gson.annotations.SerializedName;
+import com.opencsv.bean.CsvBindAndSplitByName;
+import com.opencsv.bean.CsvBindByPosition;
 
 import java.util.List;
+import java.util.Map;
 
 public class Product {
-
+    @SerializedName(value="name", alternate={"Имя", "Наименование"})
     private String name;
 
+    @SerializedName(value="price", alternate={"Цена", "Стоимость"})
     private int price;
 
-    @SerializedName("category")
-    private List<Category> categories;
+    @SerializedName("properties")
+    private Map<String, String> properties;
 
     public Product() {
     }
 
-    public Product(String name, int price, List<Category> categories) {
+    public Product(String name, int price, Map<String, String> properties) {
         this.name = name;
         this.price = price;
-        this.categories = categories;
+        this.properties = properties;
     }
 
     public String getName() {
@@ -38,12 +42,12 @@ public class Product {
         this.price = price;
     }
 
-    public List<Category> getCategories() {
-        return categories;
+    public Map<String, String> getProperties() {
+        return properties;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setProperties(Map<String, String> properties) {
+        this.properties = properties;
     }
 
     @Override
@@ -51,7 +55,7 @@ public class Product {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", categories='" + categories + '\'' +
+                ", properties=" + properties +
                 '}';
     }
 }
