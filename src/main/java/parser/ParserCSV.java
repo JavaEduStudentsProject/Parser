@@ -96,9 +96,11 @@ public class ParserCSV extends Parser {
 
     public void saveToJson(List<String> list) throws IOException {
         FileWriter writer = new FileWriter("mydata.json");
+        writer.write("[\n");
         for (int i = 0; i < list.size(); i++) {
             writer.write(list.get(i));
         }
+        writer.write("\n]");
         writer.close();
     }
 }

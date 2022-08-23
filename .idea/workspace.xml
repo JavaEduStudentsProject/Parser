@@ -118,9 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CsvToJson" />
-        <item itemvalue="Application.Example" />
         <item itemvalue="Application.ReadCSVAsListOfMaps" />
+        <item itemvalue="Application.Example" />
+        <item itemvalue="Application.CsvToJson" />
+        <item itemvalue="Application.ReadCSVAsListOfMaps" />
+        <item itemvalue="Application.Example" />
       </list>
     </recent_temporary>
   </component>
