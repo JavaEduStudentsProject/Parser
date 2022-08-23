@@ -95,7 +95,7 @@ public class ParserCSV extends Parser {
     }
 
     public void saveToJson(List<String> list) throws IOException {
-        FileWriter writer = new FileWriter("/Users/elizavetakabak/repos/ServiceDemoProject/mydata.json");
+        FileWriter writer = new FileWriter("mydata.json");
         for (int i = 0; i < list.size(); i++) {
             writer.write(list.get(i));
         }

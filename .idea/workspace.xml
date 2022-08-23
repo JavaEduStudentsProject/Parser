@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="Class ParserSCV, ParserJson">
+    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="ParserCSV with properties. FileWriter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydata.json" beforeDir="false" afterPath="$PROJECT_DIR$/mydata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/converter/CsvToJson.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/parser/ParserCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/ParserCSV.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660153334246</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ParserCSV with properties. FileWriter">
+      <created>1661254388369</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661254388369</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +212,8 @@
     <MESSAGE value="Class Parser" />
     <MESSAGE value="Class Parser/Converter" />
     <MESSAGE value="Class ParserSCV, ParserJson" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class ParserSCV, ParserJson" />
+    <MESSAGE value="ParserCSV with properties. FileWriter" />
+    <option name="LAST_COMMIT_MESSAGE" value="ParserCSV with properties. FileWriter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -215,11 +222,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/parser/ParserCSV.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
