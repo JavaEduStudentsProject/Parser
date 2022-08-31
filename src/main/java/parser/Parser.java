@@ -1,12 +1,8 @@
 package parser;
 
 import com.opencsv.exceptions.CsvValidationException;
-import model.Product;
-import org.yaml.snakeyaml.parser.ParserException;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 public abstract class Parser {
