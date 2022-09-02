@@ -14,7 +14,7 @@ public class ParserJson extends Parser {
     }
 
     @Override
-    protected List<String> parse(FileReader input) {
+    protected String parse(FileReader input) {
         System.out.println("json, проверка фабрики");
 //
 //        String data = input.lines().collect(Collectors.joining());

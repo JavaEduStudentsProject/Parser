@@ -2,9 +2,7 @@ package parser;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
-import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -22,7 +20,7 @@ public class ParserCSV extends Parser {
 
 
     @Override
-    protected List<String> parse(FileReader input) throws IOException {
+    protected String parse(FileReader input) throws IOException {
         List<String> result = new ArrayList<>();
        try(CSVReader reader = new CSVReader(input)) {
            List<String[]> r = reader.readAll();
@@ -40,8 +38,7 @@ public class ParserCSV extends Parser {
            result.remove(result.size()-1);
            result.add(newLastString);
        }
-        saveToJson(result);
-        return result;
+        return conversionString(result);
     }
 
     private String csvToJson(String[] header, String[] values) {
@@ -94,13 +91,11 @@ public class ParserCSV extends Parser {
         return header;
     }
 
-    public void saveToJson(List<String> list) throws IOException {
-        FileWriter writer = new FileWriter("mydata.json");
-        writer.write("[\n");
-        for (int i = 0; i < list.size(); i++) {
-            writer.write(list.get(i));
+    public String conversionString(List<String> list) throws IOException {
+        StringBuilder result= new StringBuilder();
+        for (String s : list) {
+            result.append(s);
         }
-        writer.write("\n]");
-        writer.close();
+       return result.toString();
     }
 }
