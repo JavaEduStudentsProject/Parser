@@ -17,8 +17,7 @@ public class ParseProjectApplication {
     public static void main(String[] args) throws IOException, CsvValidationException {
         SpringApplication.run(ParseProjectApplication.class, args);
 
-        ParserFactory parserFactory = new ParserFactory();
-        parserFactory.getParserByFileName("file3.csv").execute();
+
     }
 
     @Bean
