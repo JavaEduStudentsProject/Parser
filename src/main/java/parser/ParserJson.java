@@ -1,24 +1,3 @@
-//package parser;
-//
-package parser;
-
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.FileReader;
-import java.util.List;
-
-public class ParserJson extends Parser {
-
-    private ObjectMapper jsonMapper;
-
-    public ParserJson(String filename) {
-        super(filename);
-    }
-
-    @Override
-    protected String parse(FileReader input) {
-        System.out.println("json, проверка фабрики");
-//
 //import com.fasterxml.jackson.databind.ObjectMapper;
 //import java.io.FileReader;
 //import java.util.List;
