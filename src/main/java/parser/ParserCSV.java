@@ -2,9 +2,7 @@ package parser;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
-
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -24,29 +22,23 @@ public class ParserCSV extends Parser {
     @Override
     protected String parse(FileReader input) throws IOException {
         List<String> result = new ArrayList<>();
-        try(CSVReader reader = new CSVReader(input)) {
-            List<String[]> r = reader.readAll();
-            String[] header = r.get(0);
-            header = replaceHeader(header);
-            for (int i = 1; i < r.size(); i++) {
-                result.add(csvToJson(header, r.get(i)));
-            }
-        } catch (IOException | CsvException e) {
-            throw new RuntimeException(e);
-        }
+       try(CSVReader reader = new CSVReader(input)) {
+           List<String[]> r = reader.readAll();
+           String[] header = r.get(0);
+           header = replaceHeader(header);
+           for (int i = 1; i < r.size(); i++) {
+               result.add(csvToJson(header, r.get(i)));
+           }
+       } catch (IOException | CsvException e) {
+           throw new RuntimeException(e);
+       }
         if(result.size() > 0) {
-            String oldLastString = result.get(result.size()-1);
-            String newLastString = oldLastString.substring(0,oldLastString.length()-2);
-            result.remove(result.size()-1);
-            result.add(newLastString);
-        }
-        saveToJson(result);
-//        System.out.println(result);
-        String str = "";
-        for (int i = 0; i < result.size(); i++) {
-            str += result.get(i);
-        }
-        return str;
+           String oldLastString = result.get(result.size()-1);
+           String newLastString = oldLastString.substring(0,oldLastString.length()-2);
+           result.remove(result.size()-1);
+           result.add(newLastString);
+       }
+        return conversionString(result);
     }
 
     private String csvToJson(String[] header, String[] values) {
@@ -99,13 +91,11 @@ public class ParserCSV extends Parser {
         return header;
     }
 
-    public void saveToJson(List<String> list) throws IOException {
-        FileWriter writer = new FileWriter("mydata.json");
-        writer.write("[\n");
-        for (int i = 0; i < list.size(); i++) {
-            writer.write(list.get(i));
+    public String conversionString(List<String> list) throws IOException {
+        StringBuilder result= new StringBuilder();
+        for (String s : list) {
+            result.append(s);
         }
-        writer.write("\n]");
-        writer.close();
+       return result.toString();
     }
 }
