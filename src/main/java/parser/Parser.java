@@ -16,7 +16,7 @@ public abstract class Parser {
         this.filename = filename;
     }
 
-    public List<String> execute() throws IOException, CsvValidationException {
+    public String execute() throws IOException, CsvValidationException {
 //        try (BufferedReader input = Files.newBufferedReader(Paths.get(filename))) {
 //            return parse(input);
 //        } catch (IOException | CsvValidationException e) {
@@ -26,6 +26,6 @@ public abstract class Parser {
         return parse(reader);
     }
 
-    protected abstract List<String> parse(FileReader reader) throws IOException, CsvValidationException;
+    protected abstract String parse(FileReader reader) throws IOException, CsvValidationException;
 
 }

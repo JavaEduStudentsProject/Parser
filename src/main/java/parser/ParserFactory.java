@@ -1,7 +1,5 @@
 package parser;
 
-import org.yaml.snakeyaml.parser.ParserException;
-
 import java.io.InputStream;
 import java.util.Properties;
 

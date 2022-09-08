@@ -2,7 +2,7 @@ package parser;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
-import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,26 +22,31 @@ public class ParserCSV extends Parser {
 
 
     @Override
-    protected List<String> parse(FileReader input) throws IOException {
+    protected String parse(FileReader input) throws IOException {
         List<String> result = new ArrayList<>();
-       try(CSVReader reader = new CSVReader(input)) {
-           List<String[]> r = reader.readAll();
-           String[] header = r.get(0);
-           header = replaceHeader(header);
-           for (int i = 1; i < r.size(); i++) {
-               result.add(csvToJson(header, r.get(i)));
-           }
-       } catch (IOException | CsvException e) {
-           throw new RuntimeException(e);
-       }
+        try(CSVReader reader = new CSVReader(input)) {
+            List<String[]> r = reader.readAll();
+            String[] header = r.get(0);
+            header = replaceHeader(header);
+            for (int i = 1; i < r.size(); i++) {
+                result.add(csvToJson(header, r.get(i)));
+            }
+        } catch (IOException | CsvException e) {
+            throw new RuntimeException(e);
+        }
         if(result.size() > 0) {
-           String oldLastString = result.get(result.size()-1);
-           String newLastString = oldLastString.substring(0,oldLastString.length()-2);
-           result.remove(result.size()-1);
-           result.add(newLastString);
-       }
+            String oldLastString = result.get(result.size()-1);
+            String newLastString = oldLastString.substring(0,oldLastString.length()-2);
+            result.remove(result.size()-1);
+            result.add(newLastString);
+        }
         saveToJson(result);
-        return result;
+//        System.out.println(result);
+        String str = "";
+        for (int i = 0; i < result.size(); i++) {
+            str += result.get(i);
+        }
+        return str;
     }
 
     private String csvToJson(String[] header, String[] values) {
