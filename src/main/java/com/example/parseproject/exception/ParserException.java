@@ -1,4 +1,4 @@
-package exception;
+package com.example.parseproject.exception;
 
 public class ParserException extends RuntimeException {
 

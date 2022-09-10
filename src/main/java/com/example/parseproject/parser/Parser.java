@@ -1,4 +1,4 @@
-package parser;
+package com.example.parseproject.parser;
 
 import com.opencsv.exceptions.CsvValidationException;
 
@@ -17,11 +17,6 @@ public abstract class Parser {
     }
 
     public String execute() throws IOException, CsvValidationException {
-//        try (BufferedReader input = Files.newBufferedReader(Paths.get(filename))) {
-//            return parse(input);
-//        } catch (IOException | CsvValidationException e) {
-//            throw new RuntimeException(FILE_NOT_FOUND);
-//        }
         FileReader reader = new FileReader(filename);
         return parse(reader);
     }

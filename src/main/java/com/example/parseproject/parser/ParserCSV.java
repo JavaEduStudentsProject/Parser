@@ -1,4 +1,4 @@
-package parser;
+package com.example.parseproject.parser;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;

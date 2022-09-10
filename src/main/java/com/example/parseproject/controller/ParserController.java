@@ -1,8 +1,11 @@
 package com.example.parseproject.controller;
 
+import com.example.helloworldpro.model.Product;
+import com.example.parseproject.kafka.MessageProducer;
 import com.opencsv.exceptions.CsvValidationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import parser.ParserFactory;
+import com.example.parseproject.parser.ParserFactory;
 
 import java.io.IOException;
 
@@ -11,11 +14,17 @@ import java.io.IOException;
 @CrossOrigin("*")
 public class ParserController {
 
+    MessageProducer messageProducer;
+    @Autowired
+    public ParserController(MessageProducer messageProducer) {
+        this.messageProducer = messageProducer;
+    }
+
     @GetMapping("/api/hello")
     public String getHelloText() throws CsvValidationException, IOException {
         ParserFactory parserFactory = new ParserFactory();
-
-        String result = parserFactory.getParserByFileName("file3.csv").execute();
+        String result = parserFactory.getParserByFileName("/Users/elizavetakabak/repos/ServiceDemoProject/file3.csv").execute();
+        messageProducer.sendMessage(new Product("куртка", 50000, "одежда", "женская", "кожа", "44", 8));
         return "[" + result + "]";
     }
 }
