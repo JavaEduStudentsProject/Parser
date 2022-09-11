@@ -23,7 +23,7 @@ public class ParserController {
     @GetMapping("/api/hello")
     public String getHelloText() throws CsvValidationException, IOException {
         ParserFactory parserFactory = new ParserFactory();
-        String result = parserFactory.getParserByFileName("/Users/elizavetakabak/repos/ServiceDemoProject/file3.csv").execute();
+        String result = parserFactory.getParserByFileName("file3.csv").execute();
         messageProducer.sendMessage("[" + result + "]");
         return "[" + result + "]";
     }
