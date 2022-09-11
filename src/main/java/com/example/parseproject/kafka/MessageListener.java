@@ -1,19 +1,28 @@
 package com.example.parseproject.kafka;
 
-
-import com.example.helloworldpro.model.Product;
-import com.example.helloworldpro.repository.IProductRepository;
+import com.example.parseproject.parser.ParserFactory;
+import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 
+import java.io.File;
+import java.io.IOException;
+
 public class MessageListener {
 
+    MessageProducer messageProducer;
     @Autowired
-    private IProductRepository productRepository;
+    public MessageListener(MessageProducer messageProducer) {
+        this.messageProducer = messageProducer;
+    }
 
-    @KafkaListener(topics = "${kafka.topic.name}", containerFactory = "kafkaListenerContainerFactory")
-    public void listener(Product product) {
-        System.out.println("Recieved message: " + product);
-        productRepository.save(product);
+    //принимаем файл от оркестратора с фронта
+    @KafkaListener(topics = "topicFrontToParser", containerFactory = "kafkaListenerFileContainerFactory")
+    public void listener(File fileName) throws CsvValidationException, IOException {
+        System.out.println("Recieved message (filename): " + fileName.getName());
+        ParserFactory parserFactory = new ParserFactory();
+        String result = parserFactory.getParserByFileName(fileName.getName()).execute();
+        messageProducer.sendMessage("[" + result + "]", "parser");
+
     }
 }

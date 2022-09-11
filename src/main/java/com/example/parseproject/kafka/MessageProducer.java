@@ -19,12 +19,8 @@ public class MessageProducer {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Value(value = "${kafka.topic.name}")
-    private String topicName;
-
-
-    public void sendMessage(String product) {
-        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, product);
+    public void sendMessage(String product, String topicName) {
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName,product);
 
         future.addCallback(new ListenableFutureCallback<>() {
             @Override
