@@ -17,14 +17,14 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 public class MessageProducer {
 
     @Autowired
-    private KafkaTemplate<String, Product> kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     @Value(value = "${kafka.topic.name}")
     private String topicName;
 
 
-    public void sendMessage(Product product) {
-        ListenableFuture<SendResult<String, Product>> future = kafkaTemplate.send(topicName, product);
+    public void sendMessage(String product) {
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, product);
 
         future.addCallback(new ListenableFutureCallback<>() {
             @Override
@@ -33,7 +33,7 @@ public class MessageProducer {
             }
 
             @Override
-            public void onSuccess(SendResult<String, Product> stringDataSendResult) {
+            public void onSuccess(SendResult<String, String> stringDataSendResult) {
                 log.info("Sent Message = {} with offset = {}", product, stringDataSendResult.getRecordMetadata().offset());
             }
         });
