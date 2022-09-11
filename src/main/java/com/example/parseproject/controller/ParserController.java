@@ -24,7 +24,7 @@ public class ParserController {
     public String getHelloText() throws CsvValidationException, IOException {
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName("/Users/elizavetakabak/repos/ServiceDemoProject/file3.csv").execute();
-        messageProducer.sendMessage(new Product("куртка", 50000, "одежда", "женская", "кожа", "44", 8));
+        messageProducer.sendMessage("[" + result + "]");
         return "[" + result + "]";
     }
 }
