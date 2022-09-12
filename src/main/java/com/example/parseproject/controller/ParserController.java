@@ -1,6 +1,5 @@
 package com.example.parseproject.controller;
 
-import com.example.helloworldpro.model.Product;
 import com.example.parseproject.kafka.MessageProducer;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +15,16 @@ import java.io.IOException;
 @CrossOrigin("*")
 public class ParserController {
     MessageProducer messageProducer;
-        @Autowired
+    @Autowired
     public ParserController(MessageProducer messageProducer) {
         this.messageProducer = messageProducer;
-    }
-    @GetMapping("/api/hello")
-    public String getHello(){
-        return "her";
     }
 
     @KafkaListener(topics = "topicFrontToParser", containerFactory = "kafkaListenerFileContainerFactory")
     public void listener(File fileName) throws CsvValidationException, IOException {
         System.out.println("Recieved message (filename): " + fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
-        String result = parserFactory.getParserByFileName(fileName.getName()).execute();
+        String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
         messageProducer.sendMessage("[" + result + "]", "parser");
 
     }

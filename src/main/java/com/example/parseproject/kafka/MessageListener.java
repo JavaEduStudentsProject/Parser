@@ -12,7 +12,7 @@ public class MessageListener {
 
     MessageProducer messageProducer;
     @Autowired
-    public MessageListener(MessageProducer messageProducer) {
+    public MessageListener() {
         this.messageProducer = messageProducer;
     }
 
