@@ -1,6 +1,5 @@
 package com.example.parseproject.controller;
 
-import com.example.helloworldpro.model.Product;
 import com.example.parseproject.kafka.MessageProducer;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.extern.slf4j.Slf4j;
@@ -17,20 +16,16 @@ import java.io.IOException;
 @CrossOrigin("*")
 public class ParserController {
     MessageProducer messageProducer;
-        @Autowired
+    @Autowired
     public ParserController(MessageProducer messageProducer) {
         this.messageProducer = messageProducer;
-    }
-    @GetMapping("/api/hello")
-    public String getHello(){
-        return "her";
     }
 
     @KafkaListener(topics = "topicFrontToParser", containerFactory = "kafkaListenerFileContainerFactory")
     public void listener(File fileName) throws CsvValidationException, IOException {
         log.info("Listener parser: File {} received, topicFrontToParser ", fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
-        String result = parserFactory.getParserByFileName(fileName.getName()).execute();
+        String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
         messageProducer.sendMessage("[" + result + "]", "parser");
         log.info("Producer parser: String to orchestrator, parser");
 
