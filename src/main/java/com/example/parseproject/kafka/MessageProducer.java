@@ -30,7 +30,7 @@ public class MessageProducer {
 
             @Override
             public void onSuccess(SendResult<String, String> stringDataSendResult) {
-                log.info("Sent Message = {} with offset = {}", product, stringDataSendResult.getRecordMetadata().offset());
+                log.info("Message sent successfully with offset = {}", stringDataSendResult.getRecordMetadata().offset());
             }
         });
     }

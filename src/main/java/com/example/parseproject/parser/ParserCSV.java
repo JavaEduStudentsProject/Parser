@@ -2,10 +2,14 @@ package com.example.parseproject.parser;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+@Slf4j
 public class ParserCSV extends Parser {
 
     public ParserCSV(String filename) {
@@ -24,13 +28,17 @@ public class ParserCSV extends Parser {
         List<String> result = new ArrayList<>();
        try(CSVReader reader = new CSVReader(input)) {
            List<String[]> r = reader.readAll();
+           log.info("Read CSV file");
            String[] header = r.get(0);
            header = replaceHeader(header);
            for (int i = 1; i < r.size(); i++) {
                result.add(csvToJson(header, r.get(i)));
            }
+           log.info("File parse");
        } catch (IOException | CsvException e) {
+           log.error("Exception" + e);
            throw new RuntimeException(e);
+
        }
         if(result.size() > 0) {
            String oldLastString = result.get(result.size()-1);
@@ -81,6 +89,7 @@ public class ParserCSV extends Parser {
         result +=props + result2;
         result+= "},\n";
         return result;
+
     }
 
     private String[] replaceHeader(String[] header) {
@@ -88,7 +97,9 @@ public class ParserCSV extends Parser {
             if(headers.containsKey(header[i]))
                 header[i] = headers.get(header[i]);
         }
+        log.info("Replace name's header from map of headers");
         return header;
+
     }
 
     public String conversionString(List<String> list) throws IOException {
@@ -96,6 +107,7 @@ public class ParserCSV extends Parser {
         for (String s : list) {
             result.append(s);
         }
+        log.info("Create String from Arraylist");
        return result.toString();
     }
 }

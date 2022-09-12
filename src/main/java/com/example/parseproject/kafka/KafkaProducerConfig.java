@@ -1,6 +1,7 @@
 package com.example.parseproject.kafka;
 
 import com.example.helloworldpro.model.Product;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +14,7 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@Slf4j
 @Configuration
 public class KafkaProducerConfig {
 
@@ -32,6 +33,7 @@ public class KafkaProducerConfig {
 
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
+        log.info("Configure producerParser Kafka");
         return new KafkaTemplate<>(producerFactory());
     }
 }

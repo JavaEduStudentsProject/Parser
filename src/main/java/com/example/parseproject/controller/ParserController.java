@@ -3,6 +3,7 @@ package com.example.parseproject.controller;
 import com.example.helloworldpro.model.Product;
 import com.example.parseproject.kafka.MessageProducer;
 import com.opencsv.exceptions.CsvValidationException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import com.example.parseproject.parser.ParserFactory;
 import java.io.File;
 import java.io.IOException;
 
-
+@Slf4j
 @RestController
 @CrossOrigin("*")
 public class ParserController {
@@ -27,10 +28,11 @@ public class ParserController {
 
     @KafkaListener(topics = "topicFrontToParser", containerFactory = "kafkaListenerFileContainerFactory")
     public void listener(File fileName) throws CsvValidationException, IOException {
-        System.out.println("Recieved message (filename): " + fileName.getName());
+        log.info("Listener parser: File {} received, topicFrontToParser ", fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName(fileName.getName()).execute();
         messageProducer.sendMessage("[" + result + "]", "parser");
+        log.info("Producer parser: String to orchestrator, parser");
 
     }
 //    MessageProducer messageProducer;

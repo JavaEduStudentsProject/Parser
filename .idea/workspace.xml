@@ -4,23 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="kafka config settings for receiving files from the front">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/ConsumerFileConfig.java" afterDir="false" />
+    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="conversionString">
+      <change afterPath="$PROJECT_DIR$/logs/logOrchestrator.log.2022-09-11.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/logParser.log.2022-09-11.0.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorldPro/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/HelloWorldProApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/HelloWorldProApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/controller/OrchestratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/controller/OrchestratorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/ConsumerFileConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/ConsumerFileConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/KafkaProducerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/KafkaTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/KafkaTopicConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/MessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/MessageListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/MessageProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/MessageProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/MessageProducerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/MessageProducerFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/ProducerFileConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/java/com/example/helloworldpro/kafka/ProducerFileConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HelloWorldPro/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorldPro/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/ParseProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/ParseProjectApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/controller/ParserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/controller/ParserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/ConsumerFileConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/ConsumerFileConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/KafkaProducerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/KafkaTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/KafkaTopicConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/MessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/MessageListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/MessageProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/kafka/MessageProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parseproject/parser/ParserCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parseproject/parser/ParserCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
@@ -44,8 +52,16 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../HelloWorldPro" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/2.7.2/spring-boot-starter-logging-2.7.2.pom" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/parseproject/ParseProjectApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/parseproject/controller/ParserController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/parsers.properties" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,12 +77,16 @@
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2CrUSDfhS54g7PP28IsdJZpUKXD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -85,6 +105,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.15503877&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;fd1378312cf29cc3f6b418536bed0fa8&quot;
   }
 }</component>
@@ -110,7 +131,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HelloWorldProApplication">
+  <component name="RunManager" selected="Spring Boot.ParseProjectApplication">
     <configuration name="OrchestratorController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.parseproject.controller.OrchestratorController" />
       <module name="ServiceDemoProject" />
@@ -254,6 +275,8 @@
       <workItem from="1662893268037" duration="161000" />
       <workItem from="1662893450929" duration="54000" />
       <workItem from="1662893736337" duration="15586000" />
+      <workItem from="1662978187561" duration="12707000" />
+      <workItem from="1662992342008" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="Class Parser">
       <created>1659561281260</created>
@@ -329,6 +352,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Class Parser/Converter" />
     <MESSAGE value="Class ParserSCV, ParserJson" />
     <MESSAGE value="ParserCSV with properties. FileWriter" />
