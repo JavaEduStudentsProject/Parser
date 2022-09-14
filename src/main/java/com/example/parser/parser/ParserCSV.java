@@ -1,10 +1,9 @@
-package com.example.parseproject.parser;
+package com.example.parser.parser;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;

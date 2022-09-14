@@ -1,4 +1,4 @@
-package com.example.parseproject.parser;
+package com.example.parser.parser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.FileReader;

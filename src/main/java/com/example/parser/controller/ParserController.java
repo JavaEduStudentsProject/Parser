@@ -1,12 +1,12 @@
-package com.example.parseproject.controller;
+package com.example.parser.controller;
 
-import com.example.parseproject.kafka.MessageProducer;
+import com.example.parser.kafka.MessageProducer;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.*;
-import com.example.parseproject.parser.ParserFactory;
+import com.example.parser.parser.ParserFactory;
 
 import java.io.File;
 import java.io.IOException;

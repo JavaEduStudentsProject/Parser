@@ -1,4 +1,4 @@
-package com.example.parseproject.controller;
+package com.example.parser.controller;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,6 +1,5 @@
-package com.example.parseproject.kafka;
+package com.example.parser.kafka;
 
-import com.example.helloworldpro.model.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

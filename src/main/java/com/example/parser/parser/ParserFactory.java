@@ -1,6 +1,6 @@
-package com.example.parseproject.parser;
+package com.example.parser.parser;
 
-import com.example.parseproject.exception.ParserException;
+import com.example.parser.exception.ParserException;
 
 import java.io.InputStream;
 import java.util.Properties;

@@ -1,4 +1,4 @@
-package com.example.parseproject.security;
+package com.example.parser.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

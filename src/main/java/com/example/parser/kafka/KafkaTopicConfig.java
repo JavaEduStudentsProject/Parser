@@ -1,4 +1,4 @@
-package com.example.parseproject.kafka;
+package com.example.parser.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.AdminClientConfig;

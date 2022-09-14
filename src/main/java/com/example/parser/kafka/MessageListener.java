@@ -1,18 +1,13 @@
-package com.example.parseproject.kafka;
+package com.example.parser.kafka;
 
-import com.example.parseproject.parser.ParserFactory;
-import com.opencsv.exceptions.CsvValidationException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaListener;
-
-import java.io.File;
-import java.io.IOException;
 
 @Slf4j
 public class MessageListener {
 
     MessageProducer messageProducer;
+
+    public MessageListener(){}
 
     public MessageListener(MessageProducer messageProducer) {
         this.messageProducer = messageProducer;

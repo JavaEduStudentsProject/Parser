@@ -1,9 +1,8 @@
-package com.example.parseproject.parser;
+package com.example.parser.parser;
 
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.*;
-import java.util.List;
 
 public abstract class Parser {
 
