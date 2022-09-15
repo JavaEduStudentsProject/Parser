@@ -16,7 +16,8 @@ public class ParserCSV extends Parser {
     }
 
     private static Map<String, String> headers = new HashMap<>() {{
-        put("Имя", "name");
+        put("Имя", "title");
+        put("name", "title");
         put("Цена", "price");
         put("Стоимость", "price");
     }};
@@ -25,75 +26,81 @@ public class ParserCSV extends Parser {
     @Override
     protected String parse(FileReader input) throws IOException {
         List<String> result = new ArrayList<>();
-       try(CSVReader reader = new CSVReader(input)) {
-           List<String[]> r = reader.readAll();
-           log.info("Read CSV file");
-           String[] header = r.get(0);
-           header = replaceHeader(header);
-           for (int i = 1; i < r.size(); i++) {
-               result.add(csvToJson(header, r.get(i)));
-           }
-           log.info("File parse");
-       } catch (IOException | CsvException e) {
-           log.error("Exception" + e);
-           throw new RuntimeException(e);
+        try (CSVReader reader = new CSVReader(input)) {
+            List<String[]> r = reader.readAll();
+            log.info("Read CSV file");
+            String[] header = r.get(0);
+            header = replaceHeader(header);
+            for (int i = 1; i < r.size(); i++) {
+                result.add(csvToJson(header, r.get(i)));
+            }
+            log.info("File parse");
+        } catch (IOException | CsvException e) {
+            log.error("Exception" + e);
+            throw new RuntimeException(e);
 
-       }
-        if(result.size() > 0) {
-           String oldLastString = result.get(result.size()-1);
-           String newLastString = oldLastString.substring(0,oldLastString.length()-2);
-           result.remove(result.size()-1);
-           result.add(newLastString);
-       }
+        }
+        if (result.size() > 0) {
+            String oldLastString = result.get(result.size() - 1);
+            String newLastString = oldLastString.substring(0, oldLastString.length() - 2);
+            result.remove(result.size() - 1);
+            result.add(newLastString);
+        }
         return conversionString(result);
     }
 
+
+    private void changeOrder(int i, int number, String[] header, String[] values) {
+        String tmpH, tmpV;
+        tmpH = header[number];
+        header[number] = header[i];
+        header[i] = tmpH;
+        tmpV = values[number];
+        values[number] = values[i];
+        values[i] = tmpV;
+    }
+
     private String csvToJson(String[] header, String[] values) {
-        String tmpH = null;
-        String tmpV = null;
-        String tmpH2 = null;
-        String tmpV2 = null;
         for (int i = 0; i < header.length; i++) {
-            if(header[i].equals("name")) {
-                tmpH = header[0];
-                header[0] = header[i];
-                header[i] = tmpH;
-                tmpV = values[0];
-                values[0] = values[i];
-                values[i] = tmpV;
+            if (header[i].equals("title")) {
+                changeOrder(i, 1, header, values);
+            } else if
+            (header[i].equals("id")) {
+                changeOrder(i, 0, header, values);
             } else if
             (header[i].equals("price")) {
-                tmpH2 = header[1];
-                header[1] = header[i];
-                header[i] = tmpH2;
-                tmpV2 = values[1];
-                values[1] = values[i];
-                values[i] = tmpV2;
+                changeOrder(i, 3, header, values);
+            } else if (header[i].equals("category")) {
+                changeOrder(i, 2, header, values);
+            } else if (header[i].equals("description")) {
+                changeOrder(i, 4, header, values);
+            } else if (header[i].equals("image")) {
+                changeOrder(i, 5, header, values);
             }
         }
         String result = "{\n";
-        String props = "\"" + "properties" + "\"" + " : " + "[" + "\n";
+        String props = "\"" + "filter_features" + "\"" + " : " + "[" + "\n";
         String result2 = "{\n";
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 6; i++) {
             result += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
         }
-        for (int i = 2; i < header.length; i++) {
-            if (header[i] == header[header.length-1]) {
+        for (int i = 6; i < header.length; i++) {
+            if (header[i] == header[header.length - 1]) {
                 result2 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
             } else {
                 result2 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
             }
         }
-        result2+= "}]\n";
-        result +=props + result2;
-        result+= "},\n";
+        result2 += "}]\n";
+        result += props + result2;
+        result += "},\n";
         return result;
 
     }
 
     private String[] replaceHeader(String[] header) {
         for (int i = 0; i < header.length; i++) {
-            if(headers.containsKey(header[i]))
+            if (headers.containsKey(header[i]))
                 header[i] = headers.get(header[i]);
         }
         log.info("Replace name's header from map of headers");
@@ -102,11 +109,11 @@ public class ParserCSV extends Parser {
     }
 
     public String conversionString(List<String> list) throws IOException {
-        StringBuilder result= new StringBuilder();
+        StringBuilder result = new StringBuilder();
         for (String s : list) {
             result.append(s);
         }
         log.info("Create String from Arraylist");
-       return result.toString();
+        return result.toString();
     }
 }
