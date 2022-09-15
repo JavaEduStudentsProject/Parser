@@ -31,6 +31,7 @@ public class ParserCSV extends Parser {
             log.info("Read CSV file");
             String[] header = r.get(0);
             header = replaceHeader(header);
+            String [] tmp = header;
             for (int i = 1; i < r.size(); i++) {
                 result.add(csvToJson(header, r.get(i)));
             }
@@ -51,7 +52,8 @@ public class ParserCSV extends Parser {
 
 
     private void changeOrder(int i, int number, String[] header, String[] values) {
-        String tmpH, tmpV;
+        String tmpH = null;
+        String tmpV = null;
         tmpH = header[number];
         header[number] = header[i];
         header[i] = tmpH;
@@ -62,19 +64,19 @@ public class ParserCSV extends Parser {
 
     private String csvToJson(String[] header, String[] values) {
         for (int i = 0; i < header.length; i++) {
-            if (header[i].equals("title")) {
-                changeOrder(i, 1, header, values);
-            } else if
-            (header[i].equals("id")) {
+            if (header[i].contains("id")) {
                 changeOrder(i, 0, header, values);
             } else if
-            (header[i].equals("price")) {
-                changeOrder(i, 3, header, values);
-            } else if (header[i].equals("category")) {
+            (header[i].contains("title")) {
+                changeOrder(i, 1, header, values);
+            } else if
+            (header[i].contains("category")) {
                 changeOrder(i, 2, header, values);
-            } else if (header[i].equals("description")) {
+            } else if (header[i].contains("price")) {
+                changeOrder(i, 3, header, values);
+            } else if (header[i].contains("description")) {
                 changeOrder(i, 4, header, values);
-            } else if (header[i].equals("image")) {
+            } else if (header[i].contains("image")) {
                 changeOrder(i, 5, header, values);
             }
         }
