@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../HelloWorldPro/pom.xml" />
+        <option value="$PROJECT_DIR$/../Orchestrator/pom.xml" />
       </list>
     </option>
   </component>
