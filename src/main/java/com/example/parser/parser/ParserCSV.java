@@ -31,9 +31,8 @@ public class ParserCSV extends Parser {
             log.info("Read CSV file");
             String[] header = r.get(0);
             header = replaceHeader(header);
-            String [] tmp = header;
             for (int i = 1; i < r.size(); i++) {
-                result.add(csvToJson(header, r.get(i)));
+                result.add(csvToJson(header, r.get(i), r));
             }
             log.info("File parse");
         } catch (IOException | CsvException e) {
@@ -51,50 +50,69 @@ public class ParserCSV extends Parser {
     }
 
 
-    private void changeOrder(int i, int number, String[] header, String[] values) {
+    private void changeOrder(int i, int number, String[] header, List<String[]> r) {
         String tmpH = null;
         String tmpV = null;
         tmpH = header[number];
         header[number] = header[i];
-        header[i] = tmpH;
-        tmpV = values[number];
-        values[number] = values[i];
-        values[i] = tmpV;
+        for (int j = 1; j < r.size() ; j++) {
+            header[i] = tmpH;
+            tmpV = r.get(j)[number];
+            r.get(j)[number] = r.get(j)[i];
+            r.get(j)[i] = tmpV;
+        }
     }
 
-    private String csvToJson(String[] header, String[] values) {
+    private String csvToJson(String[] header, String [] values, List<String[]> r) {
         for (int i = 0; i < header.length; i++) {
             if (header[i].contains("id")) {
-                changeOrder(i, 0, header, values);
+                changeOrder(i, 0, header, r);
             } else if
             (header[i].contains("title")) {
-                changeOrder(i, 1, header, values);
+                changeOrder(i, 1, header, r);
             } else if
             (header[i].contains("category")) {
-                changeOrder(i, 2, header, values);
+                changeOrder(i, 2, header, r);
             } else if (header[i].contains("price")) {
-                changeOrder(i, 3, header, values);
+                changeOrder(i, 3, header, r);
             } else if (header[i].contains("description")) {
-                changeOrder(i, 4, header, values);
+                changeOrder(i, 4, header, r);
             } else if (header[i].contains("image")) {
-                changeOrder(i, 5, header, values);
+                changeOrder(i, 5, header, r);
             }
         }
+
         String result = "{\n";
         String props = "\"" + "filter_features" + "\"" + " : " + "[" + "\n";
         String result2 = "{\n";
         for (int i = 0; i < 6; i++) {
-            result += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+                result += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
         }
         for (int i = 6; i < header.length; i++) {
-            if (header[i] == header[header.length - 1]) {
-                result2 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
-            } else {
-                result2 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+            if (header[i].contains("subCategory") || header[i].contains("material") || header[i].contains("size")) {
+                if (header[i] == header[header.length - 1]) {
+                    result2 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
+                } else {
+                    result2 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+                }
             }
         }
-        result2 += "}]\n";
+
+        String props2 = "\"" + "non-filter_features" + "\"" + " : " + "[" + "\n";
+        String result3 = "{\n";
+        for (int i = 6; i < header.length; i++) {
+            if (header[i].contains("rate") || header[i].contains("count") || header[i].contains("color") || header[i].contains("country")) {
+                if (header[i] == header[header.length - 1]) {
+                    result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
+                } else {
+                    result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+                }
+            }
+        }
+        result2 += "}],\n";
+        result3 += "}]\n";
         result += props + result2;
+        result += props2 +result3;
         result += "},\n";
         return result;
 

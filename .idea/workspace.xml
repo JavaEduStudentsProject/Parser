@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="change ParserCsv">
+    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="change ParserCsv(description, image)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parser/parser/ParserCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parser/parser/ParserCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/file.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +263,7 @@
       <workItem from="1662992342008" duration="639000" />
       <workItem from="1663152596473" duration="313000" />
       <workItem from="1663153201094" duration="714000" />
-      <workItem from="1663154889981" duration="12718000" />
+      <workItem from="1663154889981" duration="15159000" />
     </task>
     <task id="LOCAL-00001" summary="Class Parser">
       <created>1659561281260</created>
@@ -350,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663236947530</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="change ParserCsv(description, image)">
+      <created>1663242360811</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663242360811</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,18 +383,10 @@
     <MESSAGE value="kafka config settings for receiving files from the front" />
     <MESSAGE value="rename all files" />
     <MESSAGE value="change ParserCsv" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ParserCsv" />
+    <MESSAGE value="change ParserCsv(description, image)" />
+    <option name="LAST_COMMIT_MESSAGE" value="change ParserCsv(description, image)" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parser/parser/ParserCSV.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="header[i]" language="JAVA" />
