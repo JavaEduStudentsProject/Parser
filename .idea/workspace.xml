@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="change ParserCsv(description, image)">
+    <list default="true" id="f637c492-f451-426b-91a2-119d6541ab5e" name="Changes" comment="change ParserCsv with filters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parser/parser/ParserCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parser/parser/ParserCSV.java" afterDir="false" />
     </list>
@@ -263,7 +263,7 @@
       <workItem from="1662992342008" duration="639000" />
       <workItem from="1663152596473" duration="313000" />
       <workItem from="1663153201094" duration="714000" />
-      <workItem from="1663154889981" duration="15159000" />
+      <workItem from="1663154889981" duration="17013000" />
     </task>
     <task id="LOCAL-00001" summary="Class Parser">
       <created>1659561281260</created>
@@ -356,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663242360811</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change ParserCsv with filters">
+      <created>1663244606705</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663244606705</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +391,8 @@
     <MESSAGE value="rename all files" />
     <MESSAGE value="change ParserCsv" />
     <MESSAGE value="change ParserCsv(description, image)" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ParserCsv(description, image)" />
+    <MESSAGE value="change ParserCsv with filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="change ParserCsv with filters" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

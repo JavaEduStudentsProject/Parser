@@ -105,11 +105,13 @@ public class ParserCSV extends Parser {
                 if (header[i] == header[header.length - 1]) {
                     result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
                 } else {
-                    result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+                            result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
                 }
             }
         }
         result2 += "}],\n";
+        result3 = result3.substring(0, result3.length() - 2);
+        result3 += "\n";
         result3 += "}]\n";
         result += props + result2;
         result += props2 +result3;
