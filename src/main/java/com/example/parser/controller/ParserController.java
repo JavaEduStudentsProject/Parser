@@ -27,7 +27,6 @@ public class ParserController {
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
         messageProducer.sendMessage("[" + result + "]", "parser");
-        System.out.println("ololololo");
         log.info("Producer parser: String to orchestrator, parser");
 
     }
