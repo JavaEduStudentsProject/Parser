@@ -101,11 +101,13 @@ public class ParserCSV extends Parser {
         String props2 = "\"" + "non-filter_features" + "\"" + " : " + "[" + "\n";
         String result3 = "{\n";
         for (int i = 6; i < header.length; i++) {
-            if (header[i].contains("rate") || header[i].contains("count") || header[i].contains("color") || header[i].contains("country")) {
+            if (header[i].contains("subCategory") || header[i].contains("material") || header[i].contains("size")) {
+            continue;
+            } else {
                 if (header[i] == header[header.length - 1]) {
                     result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
                 } else {
-                            result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+                    result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
                 }
             }
         }
