@@ -26,6 +26,7 @@ public class ParserCSV extends Parser {
     @Override
     protected String parse(FileReader input) throws IOException {
         List<String> result = new ArrayList<>();
+
         try (CSVReader reader = new CSVReader(input)) {
             List<String[]> r = reader.readAll();
             log.info("Read CSV file");
