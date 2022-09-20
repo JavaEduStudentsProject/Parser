@@ -24,8 +24,8 @@ public class ParserApplication {
         SpringApplication.run(ParserApplication.class, args);
         log.warn("Parser run! " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss")));
 
-        String csv = new ParserCSV("/Users/elizavetakabak/repos/MarketPlace/Parser/src/main/resources/file.csv").execute();
-        System.out.println(csv);
+//        String csv = new ParserCSV("/Users/elizavetakabak/repos/Parser/src/main/resources/file.csv").execute();
+//        System.out.println(csv);
     }
     @Bean
     public MessageListener messageListener() {
