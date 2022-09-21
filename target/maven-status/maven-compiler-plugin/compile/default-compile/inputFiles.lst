@@ -1,0 +1,14 @@
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\kafka\ConsumerFileConfig.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\controller\ParserController.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\parser\ParserFactory.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\kafka\KafkaTopicConfig.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\kafka\MessageListener.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\ParserApplication.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\parser\ParserJson.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\kafka\KafkaProducerConfig.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\parser\ParserCSV.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\kafka\KafkaConsumerConfig.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\kafka\MessageProducer.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\security\SecurityConfig.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\parser\Parser.java
+C:\Users\Саша\IdeaProjects1\MarketPlace\Parser\src\main\java\com\example\parser\exception\ParserException.java
