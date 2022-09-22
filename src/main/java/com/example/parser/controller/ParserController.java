@@ -21,26 +21,13 @@ public class ParserController {
         this.messageProducer = messageProducer;
     }
 
-    @KafkaListener(topics = "topicFrontToParser", containerFactory = "kafkaListenerFileContainerFactory")
+    @KafkaListener(topics = "parseFileParser", containerFactory = "kafkaListenerFileContainerFactory")
     public void listener(File fileName) throws CsvValidationException, IOException {
         log.info("Listener parser: File {} received, topicFrontToParser ", fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
-        messageProducer.sendMessage("[" + result + "]", "parser");
+        messageProducer.sendMessage("[" + result + "]", "sendParsedString");
         log.info("Producer parser: String to orchestrator, parser");
 
     }
-//    MessageProducer messageProducer;
-//    @Autowired
-//    public ParserController(MessageProducer messageProducer) {
-//        this.messageProducer = messageProducer;
-//    }
-
-//    @GetMapping("/api/hello")
-//    public String getHelloText() throws CsvValidationException, IOException {
-//        ParserFactory parserFactory = new ParserFactory();
-//        String result = parserFactory.getParserByFileName("file3.csv").execute();
-//        messageProducer.sendMessage("[" + result + "]", "parser");
-//        return "[" + result + "]";
-//    }
 }
