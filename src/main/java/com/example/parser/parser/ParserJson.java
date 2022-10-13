@@ -1,7 +1,13 @@
 package com.example.parser.parser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParserJson extends Parser {
 
@@ -12,8 +18,44 @@ public class ParserJson extends Parser {
     }
 
     @Override
-    protected String parse(FileReader input) {
+    protected String parse(FileReader input) throws IOException {
         System.out.println("json, проверка фабрики");
+
+
+
+        BufferedReader bReader = new BufferedReader(input);
+        ObjectMapper oMapper = new ObjectMapper();
+        String json;
+        ArrayList<String> listProducts = new ArrayList<>();
+        while ((json = bReader.readLine()) != null) {
+            System.out.println(json);
+            listProducts.add(json);
+            //listProducts.add(oMapper.readValue(json, String.class));
+        }
+        bReader.close();
+        System.out.println("прочитано из файла");
+        System.out.println("*************************");
+        System.out.println(conversionString(listProducts));
+        System.out.println("*************************");
+        return conversionString(listProducts);
+    }
+
+
+
+
+
+
+
+    public String conversionString(List<String> list) throws IOException {
+        StringBuilder result = new StringBuilder();
+        for (String s : list) {
+            result.append(s);
+        }
+
+        return result.toString();
+    }
+}
+
 //
 //        String data = input.lines().collect(Collectors.joining());
 //
@@ -42,6 +84,6 @@ public class ParserJson extends Parser {
 //            System.out.println(JSON_IS_INVALID);
 //        }
 //        return null;
-        return null;
-    }
-}
+// return null;
+// }
+
