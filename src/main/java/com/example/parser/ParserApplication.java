@@ -2,6 +2,7 @@ package com.example.parser;
 
 import com.example.parser.kafka.MessageListener;
 import com.example.parser.parser.ParserCSV;
+import com.example.parser.parser.ParserFactory;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,6 +28,9 @@ public class ParserApplication {
 
 //        String csv = new ParserCSV("/Users/elizavetakabak/repos/Parser/src/main/resources/file.csv").execute();
 //        System.out.println(csv);
+        File file = new File("Parser/temp_props_1.json");
+        ParserFactory parserFactory= new ParserFactory();
+        String result = parserFactory.getParserByFileName(String.valueOf(file)).execute();
     }
     @Bean
     public MessageListener messageListener() {
