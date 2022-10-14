@@ -26,7 +26,7 @@ public class ParserController {
         log.info("Listener parser: File {} received, topicFrontToParser ", fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
-        messageProducer.sendMessage("[" + result + "]", "sendParsedString");
+        messageProducer.sendMessage(result , "sendParsedString");
         log.info("Producer parser: String to orchestrator, parser");
 
     }

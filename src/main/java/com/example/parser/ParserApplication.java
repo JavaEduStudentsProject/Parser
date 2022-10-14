@@ -26,11 +26,6 @@ public class ParserApplication {
         SpringApplication.run(ParserApplication.class, args);
         log.warn("Parser run! " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss")));
 
-//        String csv = new ParserCSV("/Users/elizavetakabak/repos/Parser/src/main/resources/file.csv").execute();
-//        System.out.println(csv);
-        File file = new File("Parser/temp_props_1.json");
-        ParserFactory parserFactory= new ParserFactory();
-        String result = parserFactory.getParserByFileName(String.valueOf(file)).execute();
     }
     @Bean
     public MessageListener messageListener() {
