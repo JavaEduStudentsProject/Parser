@@ -23,7 +23,7 @@ public class ParserController {
 
     @KafkaListener(topics = "parseFileParser", containerFactory = "kafkaListenerFileContainerFactory")
     public void listener(File fileName) throws IOException, CsvValidationException {
-        log.info("Listener parser: File {} received, topicFrontToParser ", fileName.getName());
+        log.info("Listener parser: File {} received, parseFileParser ", fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
         messageProducer.sendMessage(result , "sendParsedString");
