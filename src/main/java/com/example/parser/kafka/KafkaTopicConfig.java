@@ -29,13 +29,11 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic sendParsedString() {
-        log.info("Create topic sendParsedString");
         return new NewTopic("sendParsedString", 2, (short) 1);
     }
 
     @Bean
     public NewTopic parseFileParser() {
-        log.info("Create topic parseFileParser");
         return new NewTopic("parseFileParser", 1, (short) 1);
     }
 
