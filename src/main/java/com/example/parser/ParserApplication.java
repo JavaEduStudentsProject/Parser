@@ -1,8 +1,6 @@
 package com.example.parser;
 
 import com.example.parser.kafka.MessageListener;
-import com.example.parser.parser.ParserCSV;
-import com.example.parser.parser.ParserFactory;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
