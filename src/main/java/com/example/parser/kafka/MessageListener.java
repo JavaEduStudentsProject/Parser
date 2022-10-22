@@ -12,17 +12,14 @@ import java.io.File;
 import java.io.IOException;
 
 @Slf4j
+
 @RestController
 @CrossOrigin("*")
 public class MessageListener {
-
+    @Autowired
     MessageProducer messageProducer;
 
-    public MessageListener(){}
-
-    @Autowired
-    public MessageListener(MessageProducer messageProducer) {
-        this.messageProducer = messageProducer;
+    public MessageListener() {
     }
 
     @KafkaListener(topics = "parseFileParser", containerFactory = "kafkaListenerFileContainerFactory")
@@ -30,7 +27,7 @@ public class MessageListener {
         log.info("Listener parser: File {} received, parseFileParser ", fileName.getName());
         ParserFactory parserFactory = new ParserFactory();
         String result = parserFactory.getParserByFileName(String.valueOf(fileName)).execute();
-        messageProducer.sendMessage(result , "sendParsedString");
+        messageProducer.sendMessage(result, "sendParsedString");
         log.info("Producer parser: String to orchestrator, parser");
 
     }
