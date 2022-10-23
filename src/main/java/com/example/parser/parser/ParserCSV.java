@@ -22,7 +22,6 @@ public class ParserCSV extends Parser {
         put("Стоимость", "price");
     }};
 
-
     @Override
     protected String parse(FileReader input) throws IOException {
         List<String> result = new ArrayList<>();
@@ -50,13 +49,12 @@ public class ParserCSV extends Parser {
         return conversionString(result);
     }
 
-
     private void changeOrder(int i, int number, String[] header, List<String[]> r) {
         String tmpH = null;
         String tmpV = null;
         tmpH = header[number];
         header[number] = header[i];
-        for (int j = 1; j < r.size() ; j++) {
+        for (int j = 1; j < r.size(); j++) {
             header[i] = tmpH;
             tmpV = r.get(j)[number];
             r.get(j)[number] = r.get(j)[i];
@@ -64,7 +62,7 @@ public class ParserCSV extends Parser {
         }
     }
 
-    private String csvToJson(String[] header, String [] values, List<String[]> r) {
+    private String csvToJson(String[] header, String[] values, List<String[]> r) {
         for (int i = 0; i < header.length; i++) {
             if (header[i].contains("id")) {
                 changeOrder(i, 0, header, r);
@@ -87,7 +85,7 @@ public class ParserCSV extends Parser {
         String props = "\"" + "filter_features" + "\"" + " : " + "[" + "\n";
         String result2 = "{\n";
         for (int i = 0; i < 6; i++) {
-                result += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+            result += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
         }
         for (int i = 6; i < header.length; i++) {
             if (header[i].contains("subCategory") || header[i].contains("material") || header[i].contains("size")) {
@@ -106,7 +104,7 @@ public class ParserCSV extends Parser {
                 if (header[i] == header[header.length - 1]) {
                     result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + "\n";
                 } else {
-                            result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
+                    result3 += "\"" + header[i] + "\"" + " : " + "\"" + values[i] + "\"" + ",\n";
                 }
             }
         }
@@ -115,7 +113,7 @@ public class ParserCSV extends Parser {
         result3 += "\n";
         result3 += "}]\n";
         result += props + result2;
-        result += props2 +result3;
+        result += props2 + result3;
         result += "},\n";
         return result;
 
